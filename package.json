@@ -1,0 +1,22 @@
+{
+  "name": "confessions-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --require dotenv/config -r esm src/$npm_package_main"
+  },
+  "author": "malcodeman",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^7.0.0",
+    "esm": "^3.2.22",
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.2",
+    "ws": "^6.2.1"
+  }
+}
