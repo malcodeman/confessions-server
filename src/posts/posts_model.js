@@ -7,7 +7,7 @@ const PostSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now()
   }
 });
 const Post = mongoose.model("Post", PostSchema);
