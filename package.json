@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --require dotenv/config -r esm src/$npm_package_main"
+    "start": "nodemon --require dotenv/config -r esm src/$npm_package_main",
+    "db:drop": "node --require dotenv/config -r esm src/commands/drop",
+    "db:seed": "node --require dotenv/config -r esm src/commands/seed"
   },
   "author": "malcodeman",
   "license": "MIT",
   "devDependencies": {
+    "chalk": "^2.4.2",
     "dotenv": "^7.0.0",
     "esm": "^3.2.22",
-    "nodemon": "^1.18.11"
+    "faker": "^4.1.0",
+    "nodemon": "^1.18.11",
+    "yargs": "^13.2.2"
   },
   "dependencies": {
     "cors": "^2.8.5",
