@@ -12,7 +12,14 @@ export async function create(req, res, next) {
 
 export async function findAll(req, res, next) {
   try {
-    const posts = await Post.find({}).sort({ date: -1 });
+    const options = {
+      page: Number(req.query.page) || 0,
+      limit: Number(req.query.limit) || 24
+    };
+    const posts = await Post.find({})
+      .sort({ date: -1 })
+      .skip(options.page * options.limit)
+      .limit(options.limit);
 
     res.status(200).send(posts);
   } catch (error) {
