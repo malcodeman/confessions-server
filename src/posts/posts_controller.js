@@ -17,7 +17,7 @@ export async function findAll(req, res, next) {
       limit: Number(req.query.limit) || 24
     };
     const posts = await Post.find({})
-      .sort({ date: -1 })
+      .sort({ date: "desc" })
       .skip(options.page * options.limit)
       .limit(options.limit);
 
