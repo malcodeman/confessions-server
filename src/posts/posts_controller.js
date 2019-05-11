@@ -20,8 +20,17 @@ export async function findAll(req, res, next) {
       .sort({ date: "desc" })
       .skip(options.page * options.limit)
       .limit(options.limit);
+    const count = await Post.countDocuments({});
+    const pagination = {
+      current_page: options.page,
+      total_item_count: count,
+      total_page: parseInt(count / options.limit),
+      next: {
+        page: (options.page += 1)
+      }
+    };
 
-    res.status(200).send(posts);
+    res.status(200).send({ posts, pagination });
   } catch (error) {
     res.status(400).send(error);
   }
