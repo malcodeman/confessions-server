@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import faker from "faker";
 import { argv } from "yargs";
-import chalk from "chalk";
 
 import Post from "../posts/posts_model";
 import log from "./log";
